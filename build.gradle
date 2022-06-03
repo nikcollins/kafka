@@ -1756,6 +1756,7 @@ project(':trogdor') {
     }
     from (configurations.runtimeClasspath) {
       exclude('kafka-clients*')
+      exclude('slf4j-reload4j*jar')
     }
     into "$buildDir/dependant-libs-${versions.scala}"
     duplicatesStrategy 'exclude'
@@ -2547,6 +2548,7 @@ project(':connect:runtime') {
     from (configurations.runtimeClasspath) {
       exclude('kafka-clients*')
       exclude('connect-*')
+      exclude('slf4j-reload4j*jar')
     }
     into "$buildDir/dependant-libs"
     duplicatesStrategy 'exclude'
@@ -2712,6 +2714,7 @@ project(':connect:mirror') {
     from (configurations.runtimeClasspath) {
       exclude('kafka-clients*')
       exclude('connect-*')
+      exclude('slf4j-reload4j*jar')
     }
     into "$buildDir/dependant-libs"
     duplicatesStrategy 'exclude'
